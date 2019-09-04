@@ -1,0 +1,74 @@
+server {
+    listen       80;
+    server_name  myjoblife.fitznguyen.tk;
+
+    location / {
+        proxy_pass http://localhost:5000;
+        proxy_http_version 1.1;
+        proxy_set_header Host      fitznguyen.tk;
+    }
+}
+server {
+    listen       80;
+    server_name  ssh-fsc.fitznguyen.tk;
+
+    location / {
+        proxy_pass http://localhost:2053;
+        proxy_http_version 1.1;
+        proxy_set_header Host      fitznguyen.tk;
+    }
+}
+server {
+    listen       80;
+    server_name  mjl_api.fitznguyen.tk;
+
+    location / {
+        proxy_pass http://localhost:7010;
+        proxy_http_version 1.1;
+        proxy_set_header Host      fitznguyen.tk;
+    }
+}
+server {
+    listen       80;
+    server_name  mjl-query-qmx.fitznguyen.tk;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Host      fitznguyen.tk;
+    }
+}
+server {
+    listen       80;
+    server_name  mjl-query-reg.fitznguyen.tk;
+
+    location / {
+        proxy_pass http://localhost:3001;
+        proxy_http_version 1.1;
+        proxy_set_header Host      fitznguyen.tk;
+    }
+}
+server {
+    listen       80;
+    server_name  mjl-query-base.fitznguyen.tk;
+
+    location / {
+        proxy_pass http://localhost:3002;
+        proxy_http_version 1.1;
+        proxy_set_header Host      fitznguyen.tk;
+    }
+}
+server {
+    listen       80;
+    server_name  mjl-query-jmx.fitznguyen.tk;
+
+    location / {
+        proxy_pass http://localhost:3004;
+        proxy_http_version 1.1;
+        proxy_set_header Host      fitznguyen.tk;
+    }
+}
+
+upstream tunnel {
+  server localhost:22;
+}
