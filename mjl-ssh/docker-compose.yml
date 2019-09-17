@@ -1,0 +1,111 @@
+version: '3.1'
+volumes:
+    postgres-data:
+services:
+    qmx_api_endpoint:
+        image: postgrest/postgrest
+        ports:
+          - "3000:3000"
+        # links:
+        #   - db:db
+        environment:
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@fitznguyen.ddns.net:5432/mjl_develop
+          PGRST_DB_SCHEMA: QMX
+          PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
+        # depends_on:
+        #   - db
+        restart: always
+
+    reg_api_endpoint:
+        image: postgrest/postgrest
+        ports:
+          - "3001:3000"
+        # links:
+        #   - db:db
+        environment:
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@fitznguyen.ddns.net:5432/mjl_develop
+          PGRST_DB_SCHEMA: REG
+          PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
+        # depends_on:
+        #   - db
+        restart: always
+
+    base_api_endpoint:
+        image: postgrest/postgrest
+        ports:
+          - "3002:3000"
+        # links:
+        #   - db:db
+        environment:
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@fitznguyen.ddns.net:5432/mjl_develop
+          PGRST_DB_SCHEMA: BASE
+          PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
+        # depends_on:
+        #   - db
+        restart: always
+
+    cmp_api_endpoint:
+        image: postgrest/postgrest
+        ports:
+          - "3003:3000"
+        # links:
+        #   - db:db
+        environment:
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@fitznguyen.ddns.net:5432/mjl_develop
+          PGRST_DB_SCHEMA: CMP
+          PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
+        # depends_on:
+        #   - db
+        restart: always
+
+    jmx_api_endpoint:
+        image: postgrest/postgrest
+        ports:
+          - "3004:3000"
+        # links:
+        #   - db:db
+        environment:
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@fitznguyen.ddns.net:5432/mjl_develop
+          PGRST_DB_SCHEMA: JMX
+          PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
+        # depends_on:
+        #   - db
+        restart: always
+
+    trn_api_endpoint:
+        image: postgrest/postgrest
+        ports:
+          - "3005:3000"
+        # links:
+        #   - db:db
+        environment:
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@fitznguyen.ddns.net:5432/mjl_develop
+          PGRST_DB_SCHEMA: TRN
+          PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
+        # depends_on:
+        #   - db
+        restart: always
+
+    db:
+        image: postgres
+        ports:
+            - 5432
+
+        environment:
+            POSTGRES_USER: fitznguyen
+            POSTGRES_PASSWORD: fitznguyen
+            POSTGRES_DB: fitznguyen
+        restart: always
+
+    mongodb:
+        image: mongo:latest
+        container_name: "mongodb"
+        environment:
+          - MONGO_DATA_DIR=/data/db
+          - MONGO_LOG_DIR=/dev/null
+        volumes:
+          - ./data/db:/data/db
+        ports:
+            - 27017:27017
+        command: mongod --logpath=/dev/null # --quiet
+        restart: always
