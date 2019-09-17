@@ -9,7 +9,7 @@ services:
         # links:
         #   - db:db
         environment:
-          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@postgres.mjl.svc.fiisoft.net:5432/mjl_develop
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@p35.186.152.112:5432/mjl_develop
           PGRST_DB_SCHEMA: QMX
           PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
         # depends_on:
@@ -23,7 +23,7 @@ services:
         # links:
         #   - db:db
         environment:
-          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@postgres.mjl.svc.fiisoft.net:5432/mjl_develop
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@p35.186.152.112:5432/mjl_develop
           PGRST_DB_SCHEMA: REG
           PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
         # depends_on:
@@ -37,7 +37,7 @@ services:
         # links:
         #   - db:db
         environment:
-          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@postgres.mjl.svc.fiisoft.net:5432/mjl_develop
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@p35.186.152.112:5432/mjl_develop
           PGRST_DB_SCHEMA: BASE
           PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
         # depends_on:
@@ -51,7 +51,7 @@ services:
         # links:
         #   - db:db
         environment:
-          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@postgres.mjl.svc.fiisoft.net:5432/mjl_develop
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@p35.186.152.112:5432/mjl_develop
           PGRST_DB_SCHEMA: CMP
           PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
         # depends_on:
@@ -65,7 +65,7 @@ services:
         # links:
         #   - db:db
         environment:
-          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@postgres.mjl.svc.fiisoft.net:5432/mjl_develop
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@p35.186.152.112:5432/mjl_develop
           PGRST_DB_SCHEMA: JMX
           PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
         # depends_on:
@@ -79,7 +79,7 @@ services:
         # links:
         #   - db:db
         environment:
-          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@postgres.mjl.svc.fiisoft.net:5432/mjl_develop
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@p35.186.152.112:5432/mjl_develop
           PGRST_DB_SCHEMA: TRN
           PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
         # depends_on:
