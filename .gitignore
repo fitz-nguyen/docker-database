@@ -3,3 +3,4 @@ mjl/data
 mjl-local/data
 mjl-ssh/data
 sftp-config.json
+.DS_Store
