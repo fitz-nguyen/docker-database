@@ -1,0 +1,15 @@
+version: '3.1'
+volumes:
+    postgres-data:
+services:
+    fsc-postgres:
+        image: postgres
+        ports:
+            - 5432:5432
+        volumes:
+            - ./data/postgres-data:/var/lib/postgresql/data
+        environment:
+            POSTGRES_USER: fsc_develop
+            POSTGRES_PASSWORD: bosZRKz0JyABAoJXLhWwNPPUQq9FTnC7sh7DIoZo
+            POSTGRES_DB: fsc_develop
+        restart: always
