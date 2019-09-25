@@ -13,3 +13,13 @@ services:
             POSTGRES_PASSWORD: bosZRKz0JyABAoJXLhWwNPPUQq9FTnC7sh7DIoZo
             POSTGRES_DB: fsc_develop
         restart: always
+
+    reg_api_endpoint:
+        image: postgrest/postgrest
+        ports:
+          - "8011:3000"
+        environment:
+          PGRST_DB_URI: postgres://fsc_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@postgres.mjl.svc.fiisoft.net:5432/fsc_develop
+          PGRST_DB_SCHEMA: BASE
+          PGRST_DB_ANON_ROLE: postgres
+        restart: always
