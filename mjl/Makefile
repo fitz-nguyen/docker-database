@@ -1,5 +1,5 @@
 run-autossh: # run on fitzfsc
-	# server database mjlo_develop
+	# server database mjl_develop
 	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 5432:postgres.mjl.svc.fiisoft.net:5432 -f -NT pi@fitznguyen.ddns.net
 	# nextcloud
 	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 7500:localhost:9000 -f -NT pi@fitznguyen.ddns.net
