@@ -1,6 +1,6 @@
 version: '3.1'
 volumes:
-    postgres-data:
+    fsc-data:
 services:
     fsc-postgres:
         image: postgres
@@ -12,4 +12,14 @@ services:
             POSTGRES_USER: fsc_develop
             POSTGRES_PASSWORD: bosZRKz0JyABAoJXLhWwNPPUQq9FTnC7sh7DIoZo
             POSTGRES_DB: fsc_develop
+        restart: always
+
+    base_fsc_endpoint:
+        image: postgrest/postgrest
+        ports:
+          - "8011:3000"
+        environment:
+          PGRST_DB_URI: postgres://fsc_develop:bosZRKz0JyABAoJXLhWwNPPUQq9FTnC7sh7DIoZo@fitznguyen.ddns.net:5433/fsc_develop
+          PGRST_DB_SCHEMA: BASE
+          PGRST_DB_ANON_ROLE: fsc_develop
         restart: always
