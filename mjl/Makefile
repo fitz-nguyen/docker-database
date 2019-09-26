@@ -24,7 +24,7 @@ dump-db:
 # 	pass: peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=
 
 restore-db:
-	psql -U fitznguyen mjl_develop < mjl_develop.dump
+	psql -U fitznguyen mjl_develop < /Users/fitznguyen/Documents/Backup/imac-fsc/Database/mjl_develop.dump
 
 ls:
 	ls
