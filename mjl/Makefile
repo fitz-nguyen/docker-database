@@ -8,14 +8,14 @@ run-autossh: # run on fitzfsc
 	# ssh to fitznguyen imac FSC
 	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 2054:10.0.1.3:22 -f -NT pi@fitznguyen.ddns.net
 	# server postgrest for database mjl_develop
-	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 3000:localhost:3000 -f -NT pi@fitznguyen.ddns.net
-	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 3001:localhost:3001 -f -NT pi@fitznguyen.ddns.net
-	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 3002:localhost:3002 -f -NT pi@fitznguyen.ddns.net
-	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 3003:localhost:3003 -f -NT pi@fitznguyen.ddns.net
-	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 3004:localhost:3004 -f -NT pi@fitznguyen.ddns.net
-	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 3005:localhost:3005 -f -NT pi@fitznguyen.ddns.net
-	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 3006:localhost:3006 -f -NT pi@fitznguyen.ddns.net
-	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 27017:localhost:27017 -f -NT pi@fitznguyen.ddns.net
+# 	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 3000:localhost:3000 -f -NT pi@fitznguyen.ddns.net
+# 	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 3001:localhost:3001 -f -NT pi@fitznguyen.ddns.net
+# 	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 3002:localhost:3002 -f -NT pi@fitznguyen.ddns.net
+# 	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 3003:localhost:3003 -f -NT pi@fitznguyen.ddns.net
+# 	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 3004:localhost:3004 -f -NT pi@fitznguyen.ddns.net
+# 	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 3005:localhost:3005 -f -NT pi@fitznguyen.ddns.net
+# 	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 3006:localhost:3006 -f -NT pi@fitznguyen.ddns.net
+# 	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 27017:localhost:27017 -f -NT pi@fitznguyen.ddns.net
 	# api mjl develop
 	autossh -o "ServerAliveInterval 60" -o "ServerAliveCountMax 180" -R 7010:localhost:7010 -f -NT pi@fitznguyen.ddns.net
 
