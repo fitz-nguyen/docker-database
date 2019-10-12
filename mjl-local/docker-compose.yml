@@ -6,85 +6,82 @@ services:
         image: postgrest/postgrest
         ports:
           - "3000:3000"
-        # links:
-        #   - db:db
         environment:
-          PGRST_DB_URI: postgresql://fitznguyen:fitznguyen@localhost:5432/mjl_develop
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@fitznguyen.ddns.net:5432/mjl_develop
           PGRST_DB_SCHEMA: QMX
-          PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
-        # depends_on:
-        #   - db
+          PGRST_DB_ANON_ROLE: postgres
         restart: always
 
     reg_api_endpoint:
         image: postgrest/postgrest
         ports:
           - "3001:3000"
-        # links:
-        #   - db:db
         environment:
-          PGRST_DB_URI: postgresql://fitznguyen:fitznguyen@localhost:5432/mjl_develop
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@fitznguyen.ddns.net:5432/mjl_develop
           PGRST_DB_SCHEMA: REG
-          PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
-        # depends_on:
-        #   - db
+          PGRST_DB_ANON_ROLE: postgres
         restart: always
 
     base_api_endpoint:
         image: postgrest/postgrest
         ports:
           - "3002:3000"
-        # links:
-        #   - db:db
         environment:
-          PGRST_DB_URI: postgresql://fitznguyen:fitznguyen@localhost:5432/mjl_develop
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@fitznguyen.ddns.net:5432/mjl_develop
           PGRST_DB_SCHEMA: BASE
-          PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
-        # depends_on:
-        #   - db
+          PGRST_DB_ANON_ROLE: postgres
         restart: always
 
     cmp_api_endpoint:
         image: postgrest/postgrest
         ports:
           - "3003:3000"
-        # links:
-        #   - db:db
         environment:
-          PGRST_DB_URI: postgresql://fitznguyen:fitznguyen@localhost:5432/mjl_develop
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@fitznguyen.ddns.net:5432/mjl_develop
           PGRST_DB_SCHEMA: CMP
-          PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
-        # depends_on:
-        #   - db
+          PGRST_DB_ANON_ROLE: postgres
         restart: always
 
     jmx_api_endpoint:
         image: postgrest/postgrest
         ports:
           - "3004:3000"
-        # links:
-        #   - db:db
         environment:
-          PGRST_DB_URI: postgresql://fitznguyen:fitznguyen@localhost:5432/mjl_develop
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@fitznguyen.ddns.net:5432/mjl_develop
           PGRST_DB_SCHEMA: JMX
-          PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
-        # depends_on:
-        #   - db
+          PGRST_DB_ANON_ROLE: postgres
         restart: always
 
     trn_api_endpoint:
         image: postgrest/postgrest
         ports:
           - "3005:3000"
-        # links:
-        #   - db:db
         environment:
-          PGRST_DB_URI: postgresql://fitznguyen:fitznguyen@localhost:5432/mjl_develop
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@fitznguyen.ddns.net:5432/mjl_develop
           PGRST_DB_SCHEMA: TRN
-          PGRST_DB_ANON_ROLE: postgres #In production this role should not be the same as the one used for the connection
-        # depends_on:
-        #   - db
+          PGRST_DB_ANON_ROLE: postgres
         restart: always
+
+    public_api_endpoint:
+        image: postgrest/postgrest
+        ports:
+          - "3006:3000"
+        environment:
+          PGRST_DB_URI: postgres://mjl_develop:peo6bzwyawkl7c7T83yfFYSzddOl7qmr2Lk=@fitznguyen.ddns.net:5432/mjl_develop
+          PGRST_DB_ANON_ROLE: postgres
+        restart: always
+
+    # db:
+    #     image: postgres
+    #     ports:
+    #         - 5432:5432
+    #     volumes:
+    #         - ./data/postgres-data:/var/lib/postgresql/data
+    #     environment:
+    #         POSTGRES_USER: fitznguyen
+    #         POSTGRES_PASSWORD: fitznguyen
+    #         POSTGRES_DB: mjl_develop
+    #     restart: always
 
     mongodb:
         image: mongo:latest
