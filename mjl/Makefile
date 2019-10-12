@@ -25,6 +25,3 @@ dump-db:
 
 restore-db:
 	psql -U fitznguyen mjl_develop < /Users/fitznguyen/Documents/Backup/imac-fsc/Database/mjl_develop.dump
-
-ls:
-	ls
