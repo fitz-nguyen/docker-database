@@ -7,11 +7,11 @@ services:
     restart: always
     ports:
         - 5432:5432
-    volumes:
-        - postgres-data:/var/lib/postgresql/data
-        - /Users/fitznguyen/workspaces/test/postgres:/app/dvdrental
+    # volumes:
+    #     - postgres-data:/var/lib/postgresql/data
+    #     - /Users/fitznguyen/workspaces/test/postgres:/app/dvdrental
 
     environment:
-        POSTGRES_USER: fitznguyen
-        POSTGRES_PASSWORD: fitznguyen
-        POSTGRES_DB: fitznguyen
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+        POSTGRES_DB: postgres
